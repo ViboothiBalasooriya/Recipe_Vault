@@ -120,3 +120,34 @@ body {
     border-radius: 2rem;
     margin: 4rem 1rem;
 }
+.ingredients-list li {
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ingredients-list .form-check-input:checked+span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.instruction-step {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+}
+
+.instruction-step:hover {
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.step-number {
+    font-size: 1.1rem;
+    min-width: 35px;
+}
