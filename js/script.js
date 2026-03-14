@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // ✅ Dynamic Search & Filter Logic
+    //  Dynamic Search & Filter Logic
     const searchInput = document.getElementById("searchInput");
     const categoryFilter = document.getElementById("categoryFilter");
 
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
         categoryFilter?.addEventListener("change", filterFn);
     }
 
-    // ✅ Form Validation (Feature 3)
+    //  Form Validation (Feature 3)
     const submitForm = document.getElementById("submitRecipeForm");
     if (submitForm) {
         submitForm.addEventListener("submit", function (e) {
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ✅ Smooth Scroll
+    //  Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // ✅ Dynamic Search & Filter Logic (FIXED)
+    // Dynamic Search & Filter Logic (FIXED)
     const searchInput = document.getElementById("searchInput");
     const categoryFilter = document.getElementById("categoryFilter");
 
