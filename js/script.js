@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     const categoryFilter = document.getElementById("categoryFilter");
 
-    // Only run filter if both elements exist
+    
     if (searchInput && categoryFilter) {
         const filterFn = () => {
             const query = searchInput.value.toLowerCase();
