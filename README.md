@@ -1,4 +1,4 @@
-# 🍴 Digital Recipe Book | Interactive Web Application
+# 🍴 Digital Recipe Vault | Interactive Web Application
 
 An interactive web application for culinary enthusiasts to discover, search, and submit recipes. Built as a mini-project for the COM 2303 - Web Design course at Rajarata University of Sri Lanka.
 
@@ -29,7 +29,6 @@ orb/
 ├── login.html           # Authentication portal
 ├── script.js            # Core application logic & Interactivity
 ├── style.css            # Custom styling & Design tokens
-├── img/                 # Image assets
 └── proposal.txt         # Original project proposal
 ```
 
