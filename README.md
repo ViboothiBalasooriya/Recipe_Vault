@@ -38,12 +38,6 @@ orb/
 2. Open `index.html` in any modern web browser.
 3. No server-side setup or database is required as the application uses client-side logic.
 
-## 🎓 Academic Credits
-
-**Course**: COM 2303 - Web Design  
-**University**: Rajarata University of Sri Lanka  
-
----
 *Created with passion for food and code.*
 
 ## 🚨 Note for Downloaded Copies (CSS/JS Paths)
@@ -70,3 +64,11 @@ http://localhost:5500/index.html
 ```
 
 You can also use VS Code Live Server.
+
+## 🎓 Academic Credits
+
+**Course**: COM 2303 - Web Design  
+**University**: Rajarata University of Sri Lanka  
+
+---
+
