@@ -21,7 +21,7 @@ An interactive web application for culinary enthusiasts to discover, search, and
 ## 📁 Project Structure
 
 ```text
-orb/
+Recipe_Vault/
 ├── index.html           # Home Page with Hero & Featured sections
 ├── recipes.html         # Recipe Grid with Search & Modals
 ├── submit-recipe.html   # Recipe Submission Form
