@@ -45,3 +45,28 @@ orb/
 
 ---
 *Created with passion for food and code.*
+
+## 🚨 Note for Downloaded Copies (CSS/JS Paths)
+
+If CSS or JavaScript does not load after downloading, it is usually due to asset paths in HTML files:
+
+- `/Recipe_Vault/css/style.css`
+- `/Recipe_Vault/js/script.js`
+
+These absolute paths can fail when opening files directly with `file://`.
+
+### Recommended
+
+Run the project with a local server from the project root:
+
+```bash
+python -m http.server 5500
+```
+
+Then open:
+
+```text
+http://localhost:5500/index.html
+```
+
+You can also use VS Code Live Server.
