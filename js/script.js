@@ -1,4 +1,4 @@
-const recipesData = [
+let recipesData = window.dynamicRecipesData || [
     {
         title: "Classic Honey Pancakes",
         category: "Breakfast",
@@ -55,7 +55,7 @@ function openRecipeDetails(index) {
     document.getElementById("modalTitle").innerText = recipe.title;
     document.getElementById("modalImg").src = recipe.img + "?auto=format&fit=crop&w=800&q=80";
     document.getElementById("modalCategory").innerText = recipe.category;
-    document.getElementById("modalDesc").innerText = recipe.desc;
+    document.getElementById("modalDesc").innerText = recipe.desc || "A delicious recipe to try at home!";
 
     // Populate Ingredients
     const ingList = document.getElementById("modalIngredients");
@@ -111,8 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const submitForm = document.getElementById("submitRecipeForm");
     if (submitForm) {
         submitForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-
             // Get values
             const name = document.getElementById("chefName").value.trim();
             const email = document.getElementById("chefEmail").value.trim();
@@ -126,13 +124,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // 2. Correct Email Format (JS)
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                e.preventDefault();
                 alert("⚠️ Please enter a valid email address!");
                 return;
             }
 
-            // Success
-            alert("🎉 Recipe submitted successfully! Your culinary masterpiece will be reviewed shortly. 👨‍🍳");
-            submitForm.reset();
+            // Let the form submit natively to PHP!
         });
     }
 
