@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/includes/functions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RecipeVault</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 <!--nav bar-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3">
         <div class="container">
-            <a class="navbar-brand fw-bold text-success" href="index.html">🍴 RecipeVault</a>
+            <a class="navbar-brand fw-bold text-success" href="index.php">🍴 RecipeVault</a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
@@ -20,11 +21,16 @@
 
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link fw-medium active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link fw-medium" href="recipes.html">Recipes</a></li>
-                    <li class="nav-item"><a class="nav-link fw-medium" href="submit-recipe.html">Submit Recipe</a></li>
-                    <li class="nav-item"><a class="nav-link fw-medium " href="about.html">About</a></li>
-                    <li class="nav-item ms-lg-3"><a class="btn btn-success btn-sm px-4 rounded-pill shadow-sm mt-2 mt-lg-0"href="login.html">Get Started</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium active" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="recipes.php">Recipes</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="submit-recipe.php">Submit Recipe</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium " href="about.php">About</a></li>
+                    <?php if (is_logged_in()): ?>
+                        <li class="nav-item"><a class="nav-link fw-medium" href="dashboard.php">Dashboard</a></li>
+                        <li class="nav-item ms-lg-3"><a class="btn btn-outline-success btn-sm px-4 rounded-pill shadow-sm mt-2 mt-lg-0" href="auth/logout.php">Logout</a></li>
+                    <?php else: ?>
+                        <li class="nav-item ms-lg-3"><a class="btn btn-success btn-sm px-4 rounded-pill shadow-sm mt-2 mt-lg-0" href="auth/login.php">Get Started</a></li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -36,8 +42,8 @@
         <h1 class="display-3 fw-bold">Discover Delicious<br><span class="text-success">Recipes</span>Every Day</h1>
         <p class="lead mb-5 opacity-75">Your personal culinary guide for crafting extra ordinary meals<br>with passion and simplicity</p>
         <div class="d-flex justify-content-center gap-3">
-         <a href="recipes.html" class="btn btn-success btn-lg px-5" >Explore Recipes</a>
-         <a href="submit-recipe.html" class="btn btn-outline-light btn-lg px-5" >Submit Your Recipe</a>
+         <a href="recipes.php" class="btn btn-success btn-lg px-5" >Explore Recipes</a>
+         <a href="submit-recipe.php" class="btn btn-outline-light btn-lg px-5" >Submit Your Recipe</a>
         </div>
     </div>
 </section>
@@ -54,24 +60,24 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&h=600&q=80" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&h=600&q=80" class="d-block w-100 rounded-4" style="object-fit:cover;" alt="Healthy Harvest Bowl">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
+        <h5 class="fw-bold fs-3 text-white">Signature Harvest Bowl</h5>
+        <p class="fs-5 text-light">A refreshing blend of crisp greens, quinoa, and roasted sweet potatoes.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=1200&h=600&q=80" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
+      <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=1200&h=600&q=80" class="d-block w-100 rounded-4" style="object-fit:cover;" alt="Classic Honey Pancakes">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
+        <h5 class="fw-bold fs-3 text-white">Classic Honey Pancakes</h5>
+        <p class="fs-5 text-light">Fluffy, golden brown stacks drowning in pure maple syrup and butter.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1200&h=600&q=80" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
+      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1200&h=600&q=80" class="d-block w-100 rounded-4" style="object-fit:cover;" alt="Decadent Dessert">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-3">
+        <h5 class="fw-bold fs-3 text-white">Gourmet Indulgence</h5>
+        <p class="fs-5 text-light">Treat yourself to rich, unforgettable flavors crafted by the community.</p>
       </div>
     </div>
   </div>
@@ -274,10 +280,10 @@
      <footer class="bg-white border-top py-5" id="contact">
         <div class="container text-center">
             <div class="mb-3">
-                <a href="index.html" class="text-decoration-none text-muted mx-2 small">Home</a>
-                <a href="recipes.html" class="text-decoration-none text-muted mx-2 small">Recipes</a>
-                <a href="submit-recipe.html" class="text-decoration-none text-muted mx-2 small">Submit</a>
-                <a href="about.html" class="text-decoration-none text-muted mx-2 small">About</a>
+                <a href="index.php" class="text-decoration-none text-muted mx-2 small">Home</a>
+                <a href="recipes.php" class="text-decoration-none text-muted mx-2 small">Recipes</a>
+                <a href="submit-recipe.php" class="text-decoration-none text-muted mx-2 small">Submit</a>
+                <a href="about.php" class="text-decoration-none text-muted mx-2 small">About</a>
             </div>
             <p class="text-muted small mb-0">© 2026 RecipeVault. Powered by Culinary Passion.</p>
         </div>
@@ -286,6 +292,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
     
 </script>
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
