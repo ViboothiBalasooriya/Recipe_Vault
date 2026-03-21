@@ -1,74 +1,46 @@
-# 🍴 Digital Recipe Vault | Interactive Web Application
+# 🍳 RecipeBook (formerly RecipeVault)
 
-An interactive web application for culinary enthusiasts to discover, search, and submit recipes. Built as a mini-project for the COM 2303 - Web Design course at Rajarata University of Sri Lanka.
+RecipeBook is a premium, full-stack PHP web application that allows culinary enthusiasts to discover, craft, and share their favorite recipes with the world. Built with a modern, responsive aesthetic, it seamlessly blends high-end UI design with robust backend PHP and MySQL integration.
 
-## 🚀 Key Features
+## ✨ Key Features
 
-- **Dynamic Recipe Search**: Real-time filtering of recipes by title or category on the "Recipes" page.
-- **Dynamic Content Loading**: Centralized data system populating recipe details into interactive modals.
-- **Recipe Submission**: A dedicated interface for user-contributed recipes with robust JavaScript validation.
-- **Interactive Carousel**: Premium homepage carousel highlighting featured recipes using Bootstrap.
-- **Premium UX**: Glassmorphism header, smooth scroll navigation, and a fully responsive layout.
+- **Modern UI/UX Analytics**: Stunning, pixel-perfect interfaces built with Bootstrap 5. Includes a gorgeous dual-column split-screen layout for authentication pages and a dynamic hero carousel.
+- **Full Authentication System**: Secure user registration and login flows using industry-standard BCRYPT password hashing and PHP Session handling.
+- **Dynamic Recipe Engine**: Logged-in users can securely upload recipes with custom image attachments.
+- **Dynamic Dashboard**: Personalized user profiles feature live database statistics and beautifully rendered, database-driven recipe grids complete with custom status badges.
+- **Auto-Seeding Database**: Running locally? The app intelligently detects if your database is empty. The moment you navigate to the Recipes view, the PHP backend will natively auto-inject 6 beautiful, baseline recipes directly into your database to get you started instantly—no CLI or SQL manual execution required!
 
-## 🛠 Technologies Used
+## 🚀 Tech Stack
 
-- **HTML5**: Semantic page structure.
-- **CSS3**: Custom premium styling with Glassmorphism and HSL color systems.
-- **Bootstrap 5**: Grid system, Carousel, and Layout utilities.
-- **JavaScript (ES6)**: Dynamic search, form validation, and DOM manipulation.
-- **Font Awesome**: Modern iconography.
+- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 5.3, Font Awesome 6
+- **Backend**: Native PHP 8+
+- **Database**: MySQL (using `mysqli` procedural bindings)
+- **Assets**: Dynamic imagery sourced via Unsplash
 
-## 📁 Project Structure
+## 🔧 Installation & Setup
 
-```text
-Recipe_Vault/
-├── index.html           # Home Page with Hero & Featured sections
-├── recipes.html         # Recipe Grid with Search & Modals
-├── submit-recipe.html   # Recipe Submission Form
-├── about.html           # About page & Academic Credits
-├── login.html           # Authentication portal
-├── script.js            # Core application logic & Interactivity
-├── style.css            # Custom styling & Design tokens
-└── proposal.txt         # Original project proposal
-```
+1. **Prerequisites**: Ensure you have a local web server (like XAMPP, Laragon, or MAMP) installed with PHP and MySQL active.
+2. **Clone/Move the Repository**: Place this project folder (`Recipe_Vault`) into your web server's public directory (e.g., `C:\xampp\htdocs\` for XAMPP).
+3. **Database Configuration**:
+   - Open your MySQL management tool (e.g., phpMyAdmin).
+   - Create a new empty database named `recipe_vault`.
+   - Import the provided `database.sql` file to structure the `users` and `recipes` tables.
+4. **Launch**:
+   - Start Apache and MySQL from your local server dashboard.
+   - Navigate to `http://localhost/Recipe_Vault/index.php` in your browser.
+   - Click **Recipes** in the navigation bar to trigger the auto-seed feature and instantly populate your platform with content!
 
-## 💻 How to Run
+## 📂 Project Structure
 
-1. Clone or download the repository.
-2. Open `index.html` in any modern web browser.
-3. No server-side setup or database is required as the application uses client-side logic.
+- `\auth`: Contains `login.php` and `register.php` handling secure session state.
+- `\includes`: houses `db.php` (your MySQL connector) and `functions.php` (global helper functions).
+- `\images\uploads`: Destination directory for user-uploaded recipe images.
+- `\css` & `\js`: Custom frontend asset pipelines.
+- `dashboard.php`, `submit-recipe.php`, `recipes.php`, etc. (Core functional pages).
 
-*Created with passion for food and code.*
-
-## 🚨 Note for Downloaded Copies (CSS/JS Paths)
-
-If CSS or JavaScript does not load after downloading, it is usually due to asset paths in HTML files:
-
-- `/Recipe_Vault/css/style.css`
-- `/Recipe_Vault/js/script.js`
-
-These absolute paths can fail when opening files directly with `file://`.
-
-### Recommended
-
-Run the project with a local server from the project root:
-
-```bash
-python -m http.server 5500
-```
-
-Then open:
-
-```text
-http://localhost:5500/index.html
-```
-
-You can also use VS Code Live Server.
-
-## 🎓 Academic Credits
-
-**Course**: COM 2303 - Web Design  
-**University**: Rajarata University of Sri Lanka  
+## 💡 Usage Highlights
+- **Submit Recipe**: Users can attach `.jpg`, `.png`, or `.webp` files. The system securely verifies headers and moves uploads natively behind the scenes.
+- **My Profile**: Visit the dashboard at any time to review the recipes you have personally published to the platform!
 
 ---
-
+*Built with passion for culinary excellence and clean code.*
